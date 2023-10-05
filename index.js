@@ -12,7 +12,6 @@ admin.initializeApp({
 });
 
 
-
 app.get('/', function(req, res){
    res.send("Hello world!");
 });
@@ -40,6 +39,7 @@ app.post('product /:id' ,  (req,res)=>{
     res.status(201).json(newItem)
 });
 
+
 app.put('product /:id' ,  (req,res)=>{
     let found=data.find(function(item){
         return item.id===parseInt(req.params.id);
@@ -55,6 +55,7 @@ app.put('product /:id' ,  (req,res)=>{
         res.sendStatus(404);
     }
 });
+
 
 app.delete('product /:id' , (req,res)=>{
     let found=data.find(function(item){
